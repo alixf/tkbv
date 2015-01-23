@@ -327,7 +327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .100000001
-  deadzone: .5
+  deadzone: .75
+  facing: -1
 --- !u!1 &2076402765
 GameObject:
   m_ObjectHideFlags: 0
