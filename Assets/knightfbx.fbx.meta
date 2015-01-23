@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 09759baf1a094c24883edf1bc0f961a2
+guid: 125f5e4679242ee4a98b6c5018984ebd
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -11,10 +11,9 @@ ModelImporter:
     100010: Bone_004
     100012: Bone_005
     100014: Bone_006
-    100016: Knight
-    100018: //RootNode
-    100020: Armature_dupli
-    100022: Bone_007
+    100016: Bone_007
+    100018: Knight
+    100020: //RootNode
     400000: Armature
     400002: Bone
     400004: Bone_001
@@ -23,16 +22,14 @@ ModelImporter:
     400010: Bone_004
     400012: Bone_005
     400014: Bone_006
-    400016: Knight
-    400018: //RootNode
-    400020: Armature_dupli
-    400022: Bone_007
-    2300000: Armature_dupli
-    3300000: Armature_dupli
+    400016: Bone_007
+    400018: Knight
+    400020: //RootNode
     4300000: Knight
-    4300002: Armature_dupli
     7400000: Default Take
-    7400002: Walk
+    7400002: Idle
+    7400004: Sword
+    7400006: Walk
     9500000: //RootNode
     13700000: Knight
   materials:
@@ -93,22 +90,24 @@ ModelImporter:
         weight: 1
       - path: Armature/Bone/Bone_004/Bone_005/Bone_006
         weight: 1
+      - path: Armature/Bone_007
+        weight: 1
       - path: Knight
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Walk
-      takeName: Walk
+      name: Idle
+      takeName: Idle
       firstFrame: -1
-      lastFrame: 43
+      lastFrame: 0
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       loopTime: 1
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -138,6 +137,104 @@ ModelImporter:
       - path: Armature/Bone/Bone_004/Bone_005
         weight: 1
       - path: Armature/Bone/Bone_004/Bone_005/Bone_006
+        weight: 1
+      - path: Armature/Bone_007
+        weight: 1
+      - path: Knight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Sword
+      takeName: Sword
+      firstFrame: -1
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/Bone/Bone_004
+        weight: 1
+      - path: Armature/Bone/Bone_004/Bone_005
+        weight: 1
+      - path: Armature/Bone/Bone_004/Bone_005/Bone_006
+        weight: 1
+      - path: Armature/Bone_007
+        weight: 1
+      - path: Knight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: -1
+      lastFrame: 43
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002/Bone_003
+        weight: 1
+      - path: Armature/Bone/Bone_004
+        weight: 1
+      - path: Armature/Bone/Bone_004/Bone_005
+        weight: 1
+      - path: Armature/Bone/Bone_004/Bone_005/Bone_006
+        weight: 1
+      - path: Armature/Bone_007
         weight: 1
       - path: Knight
         weight: 1
