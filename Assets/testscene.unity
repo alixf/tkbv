@@ -248,6 +248,7 @@ GameObject:
   - 61: {fileID: 1496578856}
   - 50: {fileID: 1496578859}
   - 114: {fileID: 1496578860}
+  - 114: {fileID: 1496578861}
   m_Layer: 0
   m_Name: knight
   m_TagString: Untagged
@@ -329,6 +330,17 @@ MonoBehaviour:
   speed: .100000001
   deadzone: .75
   facing: -1
+--- !u!114 &1496578861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1496578855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08735a0b257faf244845dc0914b4557d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2076402765
 GameObject:
   m_ObjectHideFlags: 0
