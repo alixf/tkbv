@@ -11,7 +11,7 @@ function Start ()
 
 function Update ()
 {
-	var stickInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+	var stickInput = new Vector2(Input.GetAxisRaw("Horizontal"), 0.0);
     if(stickInput.magnitude < deadzone)
         stickInput = Vector2.zero;
     else
