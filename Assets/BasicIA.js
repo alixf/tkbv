@@ -35,7 +35,8 @@ function Update () {
 		        delay = 0.7;
 		}
 	} else {
-		if(GameObject.FindWithTag("Knight").transform.position.x < GameObject.FindWithTag("Knight").transform.position.x){
+		Debug.Log("near");
+		if(GameObject.FindWithTag("Knight").transform.position.x > transform.position.x){
 			moveRight();
 		} else {
 			moveLeft();
