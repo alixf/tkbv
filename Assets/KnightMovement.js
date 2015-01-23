@@ -3,6 +3,7 @@
 var speed : float = 1.0;
 var deadzone : float = 0.5;
 var facing : int = 1;
+var model : Transform;
 
 function Start ()
 {
@@ -13,12 +14,16 @@ function Update ()
 {
 	var stickInput = new Vector2(Input.GetAxisRaw("Horizontal"), 0.0);
     if(stickInput.magnitude < deadzone)
+    {
         stickInput = Vector2.zero;
+        model.GetComponent(Animator).SetBool("Walk", false);
+    }
     else
         stickInput = stickInput.normalized * ((stickInput.magnitude - deadzone) / (1 - deadzone));
 
     if(stickInput.x != 0.0)
     {
+        model.GetComponent(Animator).SetBool("Walk", true);
     	transform.position.x += stickInput.x * speed;
     	if(stickInput.x < 0.0)
     		facing = -1;
