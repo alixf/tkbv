@@ -11,4 +11,5 @@ function Update ()
 	var actionBool = Input.GetKey("space");
 	GetComponent(BoxCollider2D).enabled = actionBool;
 	model.GetComponent(Animator).SetBool("Attack", actionBool);
+	GetComponent(SpriteRenderer).enabled = actionBool;
 }
