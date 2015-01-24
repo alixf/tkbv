@@ -15,6 +15,8 @@ function Update () {
 		model.GetComponent(Animator).SetBool("Jump", true);
 		
 	}
+	if(model.GetComponent(Animator).GetBool("Jump") && rigidbody2D.velocity.y < 0.0)
+		model.GetComponent(Animator).SetBool("Fall", true);
 }
 
 function OnCollisionEnter2D(collision : Collision2D)
@@ -22,6 +24,7 @@ function OnCollisionEnter2D(collision : Collision2D)
 	if(collision.gameObject.CompareTag("Ground"))
 	{
 		model.GetComponent(Animator).SetBool("Jump", false);
+		model.GetComponent(Animator).SetBool("Fall", false);
 	}
 }
 
