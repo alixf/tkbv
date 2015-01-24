@@ -2,7 +2,7 @@
 
 var speed : float = 1.0;
 var deadzone : float = 0.5;
-var facing : int = 1;
+var facing : int = -1;
 var model : Transform;
 
 function Start ()

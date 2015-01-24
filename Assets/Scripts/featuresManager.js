@@ -3,6 +3,7 @@ import UnityEngine.UI;
 
 var enemies2:GameObject[];	
 var dialogUI:GameObject;
+var graal:GameObject;
 
 var dialogs = [
 	[2 , "King Arthur : Fellow Knights of the Round Table. It's been 3 years, and still no sign of the Graal."],
@@ -13,7 +14,7 @@ var dialogs = [
 	[1.5 , 'Persifleur : Why not "Knights of the Buffet à Vaisselle" ?'],
 	[0.5 , "King Arthur : ..."],
 	[0.5 , "All : ..."],
-	[1 , "King Arthur : GET OUT"],
+	[1 , "King Arthur : GET OUT ! "],
 	[2 , 'Persifleur : If I find this sacred container, they will let me change our name to "the Knights of the Buffet à vaiselle" !'],
 	[2 , "Persifleur : Is that it ? In 3 years they didn't find it, right under the castle ?!"],
 	[1 , "Fairy : Congratulations, you found the Graal."],
@@ -41,10 +42,30 @@ function Update () {
 	}
 }
 
+function StartGame():void {
+	GameObject.FindWithTag("TitleGroup").SetActive(false);
+	
+	StartCoroutine("yieldTitle");
+}
+
+function yieldTitle() {
+	var i:int;
+	yield WaitForSeconds(2);
+	for(i=0;i<9;i++){
+		//Invoke("triggerDialog", dialogs[i][0]);
+    	triggerDialog(i);
+    	var timer:float = dialogs[i][0];
+		yield WaitForSeconds(timer *2.2);
+	}
+}
+
 function StartSecondPhase (){
 	GameObject.FindWithTag("Knight").GetComponent(KnightJump).hasArmor = false;
-	GameObject.FindWithTag("Sword").SetActive(false);
-	GameObject.FindWithTag("Graal").GetComponent(GraalActions).graalActive = true;
+	for(var obj : GameObject in GameObject.FindGameObjectsWithTag("Sword")){
+		obj.SetActive(false);
+	}
+	GameObject.FindWithTag("Knight").GetComponent(GraalActions).graalActive = true;
+	graal.SetActive(true);
 	for(var enemy : GameObject in enemies2) {
 		enemy.SetActive(true);
 	}
@@ -52,9 +73,9 @@ function StartSecondPhase (){
 
 
 function triggerDialog(i:int){
-	var timer = dialogs[i][0];
+	var timer:float = dialogs[i][0];
 	var mytext = dialogs[i][1];
-	Invoke("killDialog", timer);
+	Invoke("killDialog", timer *2);
 	dialogUI.transform.GetChild(0).GetChild(0).GetComponent(UI.Text).resizeTextForBestFit = false;
 	dialogUI.transform.GetChild(0).GetChild(0).GetComponent(UI.Text).text = mytext;
 	dialogUI.transform.GetChild(0).GetChild(0).GetComponent(UI.Text).resizeTextForBestFit = true;
