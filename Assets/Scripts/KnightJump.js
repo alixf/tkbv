@@ -10,7 +10,7 @@ function Update () {
 	// TODO add "or" with controller input
 	if(Input.GetKeyDown(KeyCode.UpArrow) && !model.GetComponent(Animator).GetBool("Jump"))
 	{
-		var force = hasArmor ? 1000 : 1400;
+		var force = hasArmor ? 1000 : 1200;
 		rigidbody2D.AddForce(new Vector2(0,force));
 		model.GetComponent(Animator).SetBool("Jump", true);
 	}

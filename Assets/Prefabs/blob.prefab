@@ -11,9 +11,10 @@ GameObject:
   - 95: {fileID: 9542216}
   - 50: {fileID: 5042216}
   - 61: {fileID: 6142216}
+  - 114: {fileID: 11476074}
   m_Layer: 0
   m_Name: blob
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,8 +132,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.00600004, y: -2.94000006, z: -.5}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_LocalPosition: {x: 4, y: .600000024, z: -.400000006}
+  m_LocalScale: {x: 1, y: 1, z: .5}
   m_Children:
   - {fileID: 442204}
   - {fileID: 442206}
@@ -268,6 +269,29 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11476074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788f77a3252965f429dc64d3971181e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultActions:
+  - idle
+  - moveLeft
+  - idle
+  - idle
+  - moveRight
+  - idle
+  clock: 0
+  delay: 0
+  detectionDistance: 4
+  lifePoints: 2
+  initialPosition: {x: 0, y: 0, z: 0}
 --- !u!137 &13742216
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
