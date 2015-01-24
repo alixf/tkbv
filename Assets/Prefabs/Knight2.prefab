@@ -370,25 +370,6 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!1 &101668
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 401668}
-  - 33: {fileID: 3301668}
-  - 23: {fileID: 2301668}
-  - 95: {fileID: 9501668}
-  - 61: {fileID: 6101668}
-  m_Layer: 0
-  m_Name: sword
-  m_TagString: Sword
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &130346
 GameObject:
@@ -602,7 +583,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: .999999881}
   m_Children:
   - {fileID: 401666}
-  - {fileID: 401668}
   m_Father: {fileID: 401646}
   m_RootOrder: 0
 --- !u!4 &401650
@@ -700,7 +680,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: -2.79999995, z: 0}
+  m_LocalPosition: {x: -12.6199999, y: -3.19000006, z: -.689999998}
   m_LocalScale: {x: -.5, y: .5, z: .5}
   m_Children:
   - {fileID: 430346}
@@ -719,18 +699,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 401648}
   m_RootOrder: 0
---- !u!4 &401668
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101668}
-  m_LocalRotation: {x: .0923028812, y: -.944743156, z: -.309692085, w: -.0550591759}
-  m_LocalPosition: {x: -.685999751, y: -.0329996347, z: -.0689999312}
-  m_LocalScale: {x: .640000105, y: .640000045, z: .640000045}
-  m_Children: []
-  m_Father: {fileID: 401648}
-  m_RootOrder: 1
 --- !u!4 &430346
 Transform:
   m_ObjectHideFlags: 1
@@ -763,26 +731,6 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!23 &2301668
-Renderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101668}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 0c396bf0bc820b64fa4d9ac4ee750522, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!33 &3301666
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -790,13 +738,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101666}
   m_Mesh: {fileID: 4300000, guid: 7a800bffd769c9549b5c32f4d11a26d9, type: 3}
---- !u!33 &3301668
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101668}
-  m_Mesh: {fileID: 4300000, guid: c81c75e89c5552642918dfff444bcc13, type: 3}
 --- !u!50 &5001668
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -823,17 +764,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .788343251, y: 3.6100955}
   m_Center: {x: .00979995728, y: .948221445}
---- !u!61 &6101668
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101668}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Size: {x: .702791572, y: .36739856}
-  m_Center: {x: -.000682457816, y: -2.4600584e-07}
 --- !u!61 &6130346
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -875,21 +805,6 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &9501668
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101668}
-  m_Enabled: 0
-  m_Avatar: {fileID: 9000000, guid: c81c75e89c5552642918dfff444bcc13, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11401664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -903,7 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: .100000001
   deadzone: .5
-  facing: 1
+  facing: -1
   model: {fileID: 401620}
 --- !u!114 &11401666
 MonoBehaviour:

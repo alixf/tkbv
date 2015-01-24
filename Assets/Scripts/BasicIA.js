@@ -15,6 +15,7 @@ function Start () {
 
 function Update () {
 	clock = clock + Time.deltaTime;
+	
 	var isKnightNear = Mathf.Abs(transform.position.x - GameObject.FindWithTag("Knight").transform.position.x) < detectionDistance;
 	
 	if(!isKnightNear){

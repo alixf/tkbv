@@ -2,9 +2,10 @@
 import UnityEngine.UI;
 
 var enemies2:GameObject[];	
-var dialogUI:GameObject;
-var graal:GameObject;
+var dialogUI:GameObject;	
 var firstDoor:GameObject;
+var noArmor:GameObject;
+
 
 var dialogs = [
 	[2 , "King Arthur : Fellow Knights of the Round Table. It's been 3 years, and still no sign of the Graal."],
@@ -67,8 +68,21 @@ function StartSecondPhase (){
 	for(var obj : GameObject in GameObject.FindGameObjectsWithTag("Sword")){
 		obj.SetActive(false);
 	}
-	GameObject.FindWithTag("Knight").GetComponent(GraalActions).graalActive = true;
-	graal.SetActive(true);
+	
+	
+	var currentK = GameObject.FindWithTag("Knight");
+
+	currentK.GetComponent(GraalActions).graalActive = true;
+	
+    // Instantiate the wreck game object at the same position we are at
+    var noArmorK = Instantiate(noArmor, currentK.transform.position, currentK.transform.rotation);
+    	
+	Camera.mainCamera.GetComponent(Follow).target = noArmorK.transform;
+
+    // Kill ourselves
+    Destroy(currentK);
+	
+	
 	for(var enemy : GameObject in enemies2) {
 		enemy.SetActive(true);
 	}
