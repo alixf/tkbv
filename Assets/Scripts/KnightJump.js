@@ -13,6 +13,7 @@ function Update () {
 		var force = hasArmor ? 1000 : 1200;
 		rigidbody2D.AddForce(new Vector2(0,force));
 		model.GetComponent(Animator).SetBool("Jump", true);
+		
 	}
 }
 
@@ -23,3 +24,4 @@ function OnCollisionEnter2D(collision : Collision2D)
 		model.GetComponent(Animator).SetBool("Jump", false);
 	}
 }
+
