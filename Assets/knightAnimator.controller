@@ -32,6 +32,26 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!1101 &110113934
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110275000}
+  m_DstState: {fileID: 110275002}
+  m_TransitionDuration: .13636364
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Attack
+    m_EventTreshold: 0
+    m_ExitTime: .863636374
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
 --- !u!1101 &110116482
 Transition:
   serializedVersion: 2
@@ -68,6 +88,10 @@ Transition:
     m_ConditionEvent: Attack
     m_EventTreshold: 0
     m_ExitTime: .75
+  - m_ConditionMode: 2
+    m_ConditionEvent: Walk
+    m_EventTreshold: 0
+    m_ExitTime: .75
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -86,6 +110,30 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: Attack
+    m_EventTreshold: 0
+    m_ExitTime: .75
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110162340
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110275002}
+  m_DstState: {fileID: 110275000}
+  m_TransitionDuration: .25
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 5
+    m_ConditionEvent: 
+    m_EventTreshold: 0
+    m_ExitTime: .75
+  - m_ConditionMode: 1
+    m_ConditionEvent: Walk
     m_EventTreshold: 0
     m_ExitTime: .75
   m_Atomic: 1
@@ -118,12 +166,12 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Walk
-  m_Speed: 1
+  m_Speed: 3
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400006, guid: 125f5e4679242ee4a98b6c5018984ebd, type: 3}
   m_ParentStateMachine: {fileID: 110704288}
-  m_Position: {x: 252, y: -60, z: 0}
+  m_Position: {x: 168, y: -48, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -133,12 +181,12 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Sword
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400004, guid: 125f5e4679242ee4a98b6c5018984ebd, type: 3}
+  - {fileID: 7400006, guid: c4d059ee02dc74d43bf58484f1685318, type: 3}
   m_ParentStateMachine: {fileID: 110704288}
-  m_Position: {x: 360, y: -132, z: 0}
+  m_Position: {x: 312, y: -204, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -173,18 +221,20 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110275000}
-      second:
-      - {fileID: 110178562}
-    data:
-      first: {fileID: 110275002}
-      second:
-      - {fileID: 110127528}
-    data:
       first: {fileID: 110275004}
       second:
       - {fileID: 110116482}
       - {fileID: 110137212}
+    data:
+      first: {fileID: 110275002}
+      second:
+      - {fileID: 110127528}
+      - {fileID: 110162340}
+    data:
+      first: {fileID: 110275000}
+      second:
+      - {fileID: 110178562}
+      - {fileID: 110113934}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

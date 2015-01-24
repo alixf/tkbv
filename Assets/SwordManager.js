@@ -1,11 +1,14 @@
 ﻿#pragma strict
+var model : Transform;
 
-function Start () {
-
+function Start ()
+{
 }
 
-function Update () {
+function Update ()
+{
 	// TODO add "OR ||" with controller input
-	var actionBool = Input.GetKeyDown("space");
+	var actionBool = Input.GetKey("space");
 	GetComponent(BoxCollider2D).enabled = actionBool;
+	model.GetComponent(Animator).SetBool("Attack", actionBool);
 }
