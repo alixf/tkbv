@@ -21,10 +21,10 @@ function Update ()
     else
         stickInput = stickInput.normalized * ((stickInput.magnitude - deadzone) / (1 - deadzone));
 
+    rigidbody2D.velocity.x = stickInput.x * speed;
     if(stickInput.x != 0.0)
     {
         model.GetComponent(Animator).SetBool("Walk", true);
-    	transform.Translate(stickInput.x * speed, 0, 0);
     	if(stickInput.x < 0.0)
         {
     		facing = -1;
