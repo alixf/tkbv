@@ -4,6 +4,7 @@ import UnityEngine.UI;
 var enemies2:GameObject[];	
 var dialogUI:GameObject;
 var graal:GameObject;
+var firstDoor:GameObject;
 
 var dialogs = [
 	[2 , "King Arthur : Fellow Knights of the Round Table. It's been 3 years, and still no sign of the Graal."],
@@ -11,7 +12,7 @@ var dialogs = [
 	[0.5 , "All : ..."],
 	[1 , 'Gerceval : Why did you call us "Knights of the round table ?"'],
 	[1 , "King Arthur : Well... You're knights soooo..."],
-	[1.5 , 'Gerceval : Why not "Knights of the Buffet à Vaisselle" ?'],
+	[1.5 , 'Gerceval : Why not "Knights of the Buffet a Vaisselle" ?'],
 	[0.5 , "King Arthur : ..."],
 	[0.5 , "All : ..."],
 	[1 , "King Arthur : GET OUT ! "],
@@ -57,6 +58,8 @@ function yieldTitle() {
     	var timer:float = dialogs[i][0];
 		yield WaitForSeconds(timer *2.2);
 	}
+	firstDoor.SetActive(false);
+	
 }
 
 function StartSecondPhase (){
