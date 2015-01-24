@@ -26,11 +26,17 @@ function Update ()
         model.GetComponent(Animator).SetBool("Walk", true);
     	transform.Translate(stickInput.x * speed, 0, 0);
     	if(stickInput.x < 0.0)
+        {
     		facing = -1;
+            model.localEulerAngles.y = 90;
+        }
     	else
+        {
     		facing = 1;
+            model.localEulerAngles.y = 270;
+        }
     }
 
-    if(transform.localScale.x * facing < 0.0)
-    	transform.localScale.x = -transform.localScale.x;
+    // if(transform.localScale.x * facing < 0.0)
+    // 	transform.localScale.x = -transform.localScale.x;
 }
