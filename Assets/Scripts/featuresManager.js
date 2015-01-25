@@ -54,9 +54,8 @@ function Update () {
 	sounds_checkFootstep();
 
 	if(Input.GetKeyDown(KeyCode.Tab)) {
-		music_obtainedGraal();
-		StartSecondPhase();
-		
+		StartCoroutine("yieldFairyDialog");
+
 	}
 }
 
@@ -70,16 +69,26 @@ function StartGame():void {
 
 function yieldTitle() {
 	var i:int;
-	yield WaitForSeconds(2);
 	for(i=0;i<9;i++){
-		//Invoke("triggerDialog", dialogs[i][0]);
+		triggerDialog(i);
+		var timer:float = dialogs[i][0];
+	}
+	firstDoor.SetActive(false);
+	music_startTheme();
+	
+}
+
+function yieldFairyDialog() {
+	var i:int;
+	music_obtainedGraal();
+	for(i=10;i<21;i++){
 		triggerDialog(i);
 		var timer:float = dialogs[i][0];
 		yield WaitForSeconds(timer *2.2);
 	}
 	firstDoor.SetActive(false);
-	music_startTheme();
-	
+
+	StartSecondPhase();
 }
 
 function StartSecondPhase (){
@@ -102,7 +111,7 @@ function StartSecondPhase (){
     Destroy(currentK);
 
     sounds_noArmor(noArmorK);
-	graalUI.SetActive(true);
+    graalUI.SetActive(true);
  //   for(var enemy : GameObject in enemies2) {
    // 	enemy.SetActive(true);
   //  }
