@@ -21,9 +21,9 @@ function Update ()
     else
         stickInput = stickInput.normalized * ((stickInput.magnitude - deadzone) / (1 - deadzone));
 
-    rigidbody2D.velocity.x = stickInput.x * speed;
     if(stickInput.x != 0.0)
     {
+        rigidbody2D.velocity.x = stickInput.x * speed;
         model.GetComponent(Animator).SetBool("Walk", true);
     	if(stickInput.x < 0.0)
         {
