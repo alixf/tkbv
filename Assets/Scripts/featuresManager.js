@@ -8,30 +8,30 @@ var noArmor:GameObject;
 
 
 var dialogs = [
-	[2 , "King Arthur : Fellow Knights of the Round Table. It's been 3 years, and still no sign of the Graal."],
-	[2 , "King Arthur : If we don't find it soon, my authority as a King will be compromised."],
+	[2.0 , "King Arthur : Fellow Knights of the Round Table. It's been 3 years, and still no sign of the Graal."],
+	[2.0 , "King Arthur : If we don't find it soon, my authority as a King will be compromised."],
 	[0.5 , "All : ..."],
-	[1 , 'Gerceval : Why did you call us "Knights of the round table ?"'],
-	[1 , "King Arthur : Well... You're knights soooo..."],
+	[1.0 , 'Gerceval : Why did you call us "Knights of the round table ?"'],
+	[1.0 , "King Arthur : Well... You're knights soooo..."],
 	[1.5 , 'Gerceval : Why not "Knights of the Buffet a Vaisselle" ?'],
 	[0.5 , "King Arthur : ..."],
 	[0.5 , "All : ..."],
-	[1 , "King Arthur : GET OUT ! "],
-	[2 , 'Gerceval : If I find this sacred container, they will let me change our name to "the Knights of the Buffet à vaiselle" !'],
-	[2 , "Gerceval : Is that it ? In 3 years they didn't find it, right under the castle ?!"],
-	[1 , "Fairy : Congratulations, you found the Graal."],
-	[1 , "Gerceval : Thank you, bye."],
+	[1.0 , "King Arthur : GET OUT ! "],
+	[2.0 , 'Gerceval : If I find this sacred container, they will let me change our name to "the Knights of the Buffet à vaiselle" !'],
+	[2.0 , "Gerceval : Is that it ? In 3 years they didn't find it, right under the castle ?!"],
+	[1.0 , "Fairy : Congratulations, you found the Graal."],
+	[1.0 , "Gerceval : Thank you, bye."],
 	[0.5 , "Fairy : ..."],
-	[1 , "Fairy : Wait, you can't leave like this !"],
+	[1.0 , "Fairy : Wait, you can't leave like this !"],
 	[0.5 , "Gerceval : Like what ?"],
 	[0.5 , "Fairy : You must become a real knight"],
 	[0.5 , "Gerceval : But am I not? It's complicated !"],
-	[1 , "Fairy : You have to leave all you possessions to handle the sacred Graal"],
-	[2 , "Gerceval : No sword ?! I hope I won't meet monsters on my way back to the castle...."],
-	[2 , "Gerceval : Great. A monster. And no sword. What do I do now ?"],
-	[2 , "Gerceval : Hey, I found the vase ! There's a bit of dirt inside however"],
-	[1 , "All : WHAT THE F-AIRY ?!"],
-	[2 , "Gerceval : So, what's our fellowship's name again ?"]
+	[1.0 , "Fairy : You have to leave all you possessions to handle the sacred Graal"],
+	[2.0 , "Gerceval : No sword ?! I hope I won't meet monsters on my way back to the castle...."],
+	[2.0 , "Gerceval : Great. A monster. And no sword. What do I do now ?"],
+	[2.0 , "Gerceval : Hey, I found the vase ! There's a bit of dirt inside however"],
+	[1.0 , "All : WHAT THE F-AIRY ?!"],
+	[2.0 , "Gerceval : So, what's our fellowship's name again ?"]
 ];
 
 function Start () {

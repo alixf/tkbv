@@ -7,6 +7,7 @@ var delay = 0.5;
 var detectionDistance:float;
 var lifePoints:int;	
 var initialPosition:Vector3;
+var speed = 5.0;
 
 function Start () {
 	initialPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
@@ -47,7 +48,8 @@ function Update () {
 
 function moveLeft(attack : boolean){	
 	var accelerate = attack?2:1;
-	transform.Translate(Vector3.left * Time.deltaTime * accelerate);
+	//transform.Translate(Vector3.left * Time.deltaTime * accelerate);
+	rigidbody2D.velocity.x = -accelerate * speed;
 	transform.localScale.x = -1;
 	GetComponent(Animator).SetBool("Walk", !attack);
 	GetComponent(Animator).SetBool("Attack", attack);	
@@ -55,7 +57,8 @@ function moveLeft(attack : boolean){
 
 function moveRight(attack : boolean){
 	var accelerate = attack?2:1;
-	transform.Translate(Vector3.right * Time.deltaTime * accelerate);
+	//transform.Translate(Vector3.right * Time.deltaTime * accelerate);
+	rigidbody2D.velocity.x = accelerate * speed;
 	transform.localScale.x = 1;
 	GetComponent(Animator).SetBool("Walk", !attack);
 	GetComponent(Animator).SetBool("Attack", attack);	
