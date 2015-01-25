@@ -1,5 +1,6 @@
 ﻿#pragma strict
 import UnityEngine.UI;
+import System.Collections;
 
 var enemies2:GameObject[];	
 var dialogUI:GameObject;	
@@ -37,14 +38,23 @@ var dialogs = [
 var mainMusicPlayer:AudioSource;
 var actualTheme:int;
 
+// Sound variables
+var stepPlayer:AudioSource;
+var stepFinished:boolean;
+var knightAnimator:Animator;
+
 function Start () {
 	music_init();
+	sounds_init();
 }
 
 function Update () {
+	sounds_checkFootstep();
+
 	if(Input.GetKeyDown(KeyCode.Tab)) {
 		music_nextTheme();
 		StartSecondPhase ();
+		
 	}
 }
 
@@ -82,12 +92,13 @@ function StartSecondPhase (){
 	
     // Instantiate the wreck game object at the same position we are at
     var noArmorK = Instantiate(noArmor, currentK.transform.position, currentK.transform.rotation);
-
+	knightAnimator = noArmorK.GetComponentInChildren(Animator);
     Camera.mainCamera.GetComponent(Follow).target = noArmorK.transform;
 
     // Kill ourselves
     Destroy(currentK);
 
+	sounds_noArmor(noArmorK);
 
     for(var enemy : GameObject in enemies2) {
     	enemy.SetActive(true);
@@ -109,6 +120,29 @@ function triggerDialog(i:int){
 function killDialog () {
 	dialogUI.SetActive(false);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Music Functions //
 
@@ -140,4 +174,42 @@ function music_nextTheme(){
 		mainMusicPlayer.time = tmp;
 		mainMusicPlayer.Play();
 	}
+}
+
+// Sound Functions //
+
+function sounds_init(){
+	stepFinished = true;
+
+	knightAnimator = GameObject.FindWithTag("Knight").GetComponentInChildren(Animator);
+
+	stepPlayer = GameObject.FindWithTag("Knight").GetComponent(AudioSource);
+	stepPlayer.volume = 0.4f;
+	stepPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepArmor");
+}
+
+
+
+function sounds_noArmor(noArmorK:GameObject){
+	stepFinished = true;
+
+	stepPlayer = noArmorK.GetComponent(AudioSource);
+	Debug.Log(noArmorK);
+	Debug.Log(stepPlayer);
+	stepPlayer.volume = 0.4f;
+	stepPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepNoArmor");
+}
+
+function sounds_playFootstep(){
+	stepFinished = false;
+	stepPlayer.Play();
+	yield WaitForSeconds(0.3);
+	stepFinished = true;
+}
+
+function sounds_checkFootstep(){
+	knightAnimator = GameObject.FindWithTag("Knight").GetComponentInChildren(Animator);
+	if (knightAnimator.GetCurrentAnimatorStateInfo(0).nameHash == 
+		Animator.StringToHash("Base Layer.Run") && stepFinished)
+		StartCoroutine("sounds_playFootstep");
 }

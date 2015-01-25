@@ -7041,6 +7041,9 @@ MonoBehaviour:
   noArmor: {fileID: 101664, guid: 99a7ef31ea085a14ab8e6f063090c13a, type: 2}
   mainMusicPlayer: {fileID: 0}
   actualTheme: 0
+  stepPlayer: {fileID: 0}
+  stepFinished: 0
+  knightAnimator: {fileID: 0}
 --- !u!4 &152701857
 Transform:
   m_ObjectHideFlags: 0
@@ -37638,6 +37641,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 198796, guid: f8cfbbc0f10fafa428778ecadf27be28, type: 2}
+      propertyPath: m_TagString
+      value: Model
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8cfbbc0f10fafa428778ecadf27be28, type: 2}
   m_RootGameObject: {fileID: 1204500833}
@@ -50986,6 +50993,7 @@ GameObject:
   - 50: {fileID: 1204500837}
   - 114: {fileID: 1204500836}
   - 114: {fileID: 1204500835}
+  - 82: {fileID: 1204500841}
   m_Layer: 0
   m_Name: KnightArmor
   m_TagString: Knight
@@ -51076,7 +51084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6909a4d21649bd40a9fd5e9330ba9fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .100000001
+  speed: 7.5
   deadzone: .5
   facing: -1
   model: {fileID: 2079105095}
@@ -51092,6 +51100,65 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .788343251, y: 3.6100955}
   m_Center: {x: .00979995728, y: .948221445}
+--- !u!82 &1204500841
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8203944, guid: f8cfbbc0f10fafa428778ecadf27be28,
+    type: 2}
+  m_PrefabInternal: {fileID: 902045268}
+  m_GameObject: {fileID: 1204500833}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: .5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &1205465108
 Prefab:
   m_ObjectHideFlags: 0
@@ -77408,6 +77475,7 @@ MonoBehaviour:
   detectionDistance: 4
   lifePoints: 2
   initialPosition: {x: 0, y: 0, z: 0}
+  speed: 1
 --- !u!1001 &1819308794
 Prefab:
   m_ObjectHideFlags: 0
@@ -84919,6 +84987,7 @@ MonoBehaviour:
   detectionDistance: 4
   lifePoints: 2
   initialPosition: {x: 0, y: 0, z: 0}
+  speed: 1
 --- !u!61 &2000365029
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -87770,7 +87839,7 @@ GameObject:
   - 95: {fileID: 2079105096}
   m_Layer: 0
   m_Name: model
-  m_TagString: Untagged
+  m_TagString: Model
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
