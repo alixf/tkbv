@@ -6,6 +6,7 @@ var enemies2:GameObject[];
 var dialogUI:GameObject;	
 var firstDoor:GameObject;
 var noArmor:GameObject;
+var graalUI:GameObject;
 
 var dialogs = [
 [2 , "King Arthur : Fellow Knights of the Round Table. It's been 3 years, and still no sign of the Graal."],
@@ -41,7 +42,6 @@ var actualTheme:int;
 // Sound variables
 var soundPlayer:AudioSource;
 var stepFinished:boolean;
-var currentSoundLoaded:String;
 var knightAnimator:Animator;
 var noArmorSound:boolean;
 
@@ -102,10 +102,10 @@ function StartSecondPhase (){
     Destroy(currentK);
 
     sounds_noArmor(noArmorK);
-
-    for(var enemy : GameObject in enemies2) {
-    	enemy.SetActive(true);
-    }
+	graalUI.SetActive(true);
+ //   for(var enemy : GameObject in enemies2) {
+   // 	enemy.SetActive(true);
+  //  }
 }
 
 
@@ -212,36 +212,24 @@ function sounds_noArmor(noArmorK:GameObject){
 
 function sounds_loadFootstep(){
 	stepFinished = true;
-	if (noArmorSound && currentSoundLoaded != "StepNoArmor"){
+	if (noArmorSound){
 		soundPlayer.volume = 0.4f;
 		soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepNoArmor");
-		currentSoundLoaded = "StepNoArmor";
 	}
-	else if (!noArmorSound && currentSoundLoaded != "StepArmor"){
+	else {
 		soundPlayer.volume = 0.4f;
 		soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepArmor");
-		currentSoundLoaded = "StepArmor";
 	}
 }
 
 function sounds_loadMenuSelection(){
 	soundPlayer.volume = 0.4f;
 	soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/MenuSelectionSFX");
-	currentSoundLoaded = "MenuSelectionSFX";
 }
 
-function sounds_FootstepLoaded(){
-	return ((noArmorSound && currentSoundLoaded == "StepNoArmor") || 
-		(!noArmorSound && currentSoundLoaded == "StepArmor"));
-}
-
-function sounds_MenuSelectionLoaded(){
-	return currentSoundLoaded == "MenuSelectionSFX";
-}
 
 function sounds_playFootstep(){
-	if (!sounds_FootstepLoaded())
-		sounds_loadFootstep();
+	sounds_loadFootstep();
 
 	stepFinished = false;
 	soundPlayer.Play();
@@ -257,8 +245,7 @@ function sounds_checkFootstep(){
 }
 
 function sounds_playMenuSelection(){
-	if (!sounds_MenuSelectionLoaded())
-		sounds_loadMenuSelection();
+	sounds_loadMenuSelection();
 
 	soundPlayer.Play();
 }
