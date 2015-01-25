@@ -11,7 +11,7 @@ GameObject:
   - 61: {fileID: 6111116}
   m_Layer: 0
   m_Name: earth
-  m_TagString: Untagged
+  m_TagString: Element
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.18000031, y: 0, z: 0}
+  m_LocalPosition: {x: -16.6100006, y: -3.77999997, z: .551999986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 411118}
@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.699999988, z: 1.63}
+  m_LocalPosition: {x: 0, y: -.699999988, z: .310000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 411118}
@@ -154,8 +154,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: 2.07033181, y: 2.50495577}
+  m_Center: {x: -5.7220459e-06, y: .752477884}
 --- !u!95 &9511116
 Animator:
   serializedVersion: 3

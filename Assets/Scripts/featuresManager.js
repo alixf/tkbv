@@ -53,7 +53,7 @@ function Update () {
 
 	if(Input.GetKeyDown(KeyCode.Tab)) {
 		music_nextTheme();
-		StartSecondPhase ();
+		StartSecondPhase();
 		
 	}
 }
@@ -88,7 +88,7 @@ function StartSecondPhase (){
 	
 	var currentK = GameObject.FindWithTag("Knight");
 
-	currentK.GetComponent(GraalActions).graalActive = true;
+	//currentK.GetComponent(GraalActions).graalActive = true;
 	
     // Instantiate the wreck game object at the same position we are at
     var noArmorK = Instantiate(noArmor, currentK.transform.position, currentK.transform.rotation);
