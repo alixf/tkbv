@@ -995,6 +995,15 @@ MonoBehaviour:
   - {fileID: 408014, guid: cd5fd14b8f81dba4f8db04784e3015d7, type: 2}
   - {fileID: 405814, guid: 9f32fc98c3e6b1b48bb781ca59881de5, type: 2}
   finalElement: 
+  graalUI: {fileID: 0}
+  UIwater: {fileID: 21300000, guid: 783df763b22d06e49b8351232bcbddc9, type: 3}
+  UIfire: {fileID: 21300000, guid: add7aa83ea6aab94eae7266d5222eff4, type: 3}
+  UIfood: {fileID: 21300000, guid: 7af552f888ec5f54aad521ca1214333e, type: 3}
+  UIearth: {fileID: 21300000, guid: 778537823e936db488279d403a55cc95, type: 3}
+  UIdust: {fileID: 21300000, guid: e13979edefbe49b47aa7d7b7c940a05e, type: 3}
+  UIbomb: {fileID: 21300000, guid: 764a9f4522f412046adfdc7183131952, type: 3}
+  UIoil: {fileID: 21300000, guid: 44e4ab0d90b8f9e4f94222fb7cf6d6c1, type: 3}
+  UImud: {fileID: 21300000, guid: 887d33b93f9cc694494972c702ab64c4, type: 3}
 --- !u!137 &13701668
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -12,9 +12,12 @@ TagManager:
   - 
   - Model
   - Element
-  - 
+  - SecondUI
   - Earth
-  - Hitbox
+  - 
+  - Image1
+  - Image2
+  - Image3
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

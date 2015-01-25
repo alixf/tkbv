@@ -6,6 +6,7 @@ var enemies2:GameObject[];
 var dialogUI:GameObject;	
 var firstDoor:GameObject;
 var noArmor:GameObject;
+var graalUI:GameObject;
 
 var dialogs = [
 [2 , "King Arthur : Fellow Knights of the Round Table. It's been 3 years, and still no sign of the Graal."],
@@ -99,10 +100,10 @@ function StartSecondPhase (){
     Destroy(currentK);
 
     sounds_noArmor(noArmorK);
-
-    for(var enemy : GameObject in enemies2) {
-    	enemy.SetActive(true);
-    }
+	graalUI.SetActive(true);
+ //   for(var enemy : GameObject in enemies2) {
+   // 	enemy.SetActive(true);
+  //  }
 }
 
 
