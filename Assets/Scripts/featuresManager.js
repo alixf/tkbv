@@ -81,7 +81,7 @@ function yieldTitle() {
 function yieldFairyDialog() {
 	var i:int;
 	music_obtainedGraal();
-	for(i=10;i<21;i++){
+	for(i=10;i<20;i++){
 		triggerDialog(i);
 		var timer:float = dialogs[i][0];
 		yield WaitForSeconds(timer *2.2);
