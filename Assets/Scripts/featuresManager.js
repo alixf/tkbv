@@ -54,7 +54,7 @@ function Update () {
 	if(Input.GetKeyDown(KeyCode.Tab)) {
 		music_nextTheme();
 		StartSecondPhase ();
-		sounds_noArmor();
+		
 	}
 }
 
@@ -92,12 +92,13 @@ function StartSecondPhase (){
 	
     // Instantiate the wreck game object at the same position we are at
     var noArmorK = Instantiate(noArmor, currentK.transform.position, currentK.transform.rotation);
-
+	knightAnimator = noArmorK.GetComponentInChildren(Animator);
     Camera.mainCamera.GetComponent(Follow).target = noArmorK.transform;
 
     // Kill ourselves
     Destroy(currentK);
 
+	sounds_noArmor(noArmorK);
 
     for(var enemy : GameObject in enemies2) {
     	enemy.SetActive(true);
@@ -119,6 +120,29 @@ function triggerDialog(i:int){
 function killDialog () {
 	dialogUI.SetActive(false);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Music Functions //
 
@@ -157,20 +181,23 @@ function music_nextTheme(){
 function sounds_init(){
 	stepFinished = true;
 
-	knightAnimator = GameObject.FindWithTag("Knight").FindWithTag("Model").GetComponent(Animator);
+	knightAnimator = GameObject.FindWithTag("Knight").GetComponentInChildren(Animator);
 
 	stepPlayer = GameObject.FindWithTag("Knight").GetComponent(AudioSource);
 	stepPlayer.volume = 0.4f;
 	stepPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepArmor");
 }
 
-function sounds_noArmor(){
-	knightAnimator = GameObject.FindWithTag("Knight").FindWithTag("Model").GetComponent(Animator);
 
-	stepPlayer = GameObject.FindWithTag("Knight").GetComponent(AudioSource);
 
-	stepPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepNoArmor");
+function sounds_noArmor(noArmorK:GameObject){
+	stepFinished = true;
+
+	stepPlayer = noArmorK.GetComponent(AudioSource);
+	Debug.Log(noArmorK);
+	Debug.Log(stepPlayer);
 	stepPlayer.volume = 0.4f;
+	stepPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepNoArmor");
 }
 
 function sounds_playFootstep(){
@@ -181,6 +208,7 @@ function sounds_playFootstep(){
 }
 
 function sounds_checkFootstep(){
+	knightAnimator = GameObject.FindWithTag("Knight").GetComponentInChildren(Animator);
 	if (knightAnimator.GetCurrentAnimatorStateInfo(0).nameHash == 
 		Animator.StringToHash("Base Layer.Run") && stepFinished)
 		StartCoroutine("sounds_playFootstep");
