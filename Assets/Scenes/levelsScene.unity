@@ -7042,7 +7042,8 @@ MonoBehaviour:
   mainMusicPlayer: {fileID: 0}
   actualTheme: 0
   stepPlayer: {fileID: 0}
-  stepPlayed: 0
+  stepFinished: 0
+  knightAnimator: {fileID: 0}
 --- !u!4 &152701857
 Transform:
   m_ObjectHideFlags: 0
@@ -37640,6 +37641,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 198796, guid: f8cfbbc0f10fafa428778ecadf27be28, type: 2}
+      propertyPath: m_TagString
+      value: Model
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8cfbbc0f10fafa428778ecadf27be28, type: 2}
   m_RootGameObject: {fileID: 1204500833}
@@ -51079,7 +51084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6909a4d21649bd40a9fd5e9330ba9fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .100000001
+  speed: 7.5
   deadzone: .5
   facing: -1
   model: {fileID: 2079105095}
@@ -51098,8 +51103,9 @@ BoxCollider2D:
 --- !u!82 &1204500841
 AudioSource:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 8203944, guid: f8cfbbc0f10fafa428778ecadf27be28,
+    type: 2}
+  m_PrefabInternal: {fileID: 902045268}
   m_GameObject: {fileID: 1204500833}
   m_Enabled: 1
   serializedVersion: 3
@@ -77469,6 +77475,7 @@ MonoBehaviour:
   detectionDistance: 4
   lifePoints: 2
   initialPosition: {x: 0, y: 0, z: 0}
+  speed: 1
 --- !u!1001 &1819308794
 Prefab:
   m_ObjectHideFlags: 0
@@ -84980,6 +84987,7 @@ MonoBehaviour:
   detectionDistance: 4
   lifePoints: 2
   initialPosition: {x: 0, y: 0, z: 0}
+  speed: 1
 --- !u!61 &2000365029
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -87831,7 +87839,7 @@ GameObject:
   - 95: {fileID: 2079105096}
   m_Layer: 0
   m_Name: model
-  m_TagString: Untagged
+  m_TagString: Model
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

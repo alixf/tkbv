@@ -167,6 +167,8 @@ function sounds_init(){
 function sounds_noArmor(){
 	knightAnimator = GameObject.FindWithTag("Knight").FindWithTag("Model").GetComponent(Animator);
 
+	stepPlayer = GameObject.FindWithTag("Knight").GetComponent(AudioSource);
+
 	stepPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepNoArmor");
 	stepPlayer.volume = 0.4f;
 }
