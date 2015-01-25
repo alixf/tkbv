@@ -325,7 +325,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 161122, guid: d0c6aa868be8dc648aa7aacc5ebaad32, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0c6aa868be8dc648aa7aacc5ebaad32, type: 2}
@@ -344,13 +344,14 @@ GameObject:
   - 50: {fileID: 27778390}
   - 61: {fileID: 27778389}
   - 114: {fileID: 27778388}
+  - 82: {fileID: 27778392}
   m_Layer: 0
   m_Name: foodBlob
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &27778387
 Transform:
   m_ObjectHideFlags: 0
@@ -436,6 +437,65 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!82 &27778392
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8221790, guid: 9282e2354e4d19c45a12dc36c607726d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1042870092}
+  m_GameObject: {fileID: 27778386}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: .5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &28482513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2900,13 +2960,14 @@ GameObject:
   - 50: {fileID: 338499663}
   - 61: {fileID: 338499662}
   - 114: {fileID: 338499661}
+  - 82: {fileID: 338499665}
   m_Layer: 0
   m_Name: fireBlob
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &338499660
 Transform:
   m_ObjectHideFlags: 0
@@ -2992,6 +3053,65 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!82 &338499665
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8221790, guid: d0c6aa868be8dc648aa7aacc5ebaad32,
+    type: 2}
+  m_PrefabInternal: {fileID: 17042652}
+  m_GameObject: {fileID: 338499659}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: .5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &338662687
 GameObject:
   m_ObjectHideFlags: 0
@@ -12008,7 +12128,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 119798, guid: 9282e2354e4d19c45a12dc36c607726d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9282e2354e4d19c45a12dc36c607726d, type: 2}
@@ -15603,7 +15723,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 125920, guid: a4a82f5ca7a63354a8ae3e85924bebca, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4a82f5ca7a63354a8ae3e85924bebca, type: 2}
@@ -17471,7 +17591,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 160364, guid: 4b1c16a9389754347a0e4d4fae6a42b5, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b1c16a9389754347a0e4d4fae6a42b5, type: 2}
@@ -25954,13 +26074,14 @@ GameObject:
   - 50: {fileID: 1760518684}
   - 61: {fileID: 1760518683}
   - 114: {fileID: 1760518682}
+  - 82: {fileID: 1760518687}
   m_Layer: 0
   m_Name: metalBlob
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1760518682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26046,6 +26167,65 @@ Transform:
   - {fileID: 1793326185}
   m_Father: {fileID: 2087608401}
   m_RootOrder: 3
+--- !u!82 &1760518687
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8221790, guid: 4b1c16a9389754347a0e4d4fae6a42b5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1380230907}
+  m_GameObject: {fileID: 1760518681}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: .5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &1773815961
 Prefab:
   m_ObjectHideFlags: 0
@@ -27503,6 +27683,7 @@ GameObject:
   - 50: {fileID: 1817815417}
   - 61: {fileID: 1817815416}
   - 114: {fileID: 1817815418}
+  - 82: {fileID: 1817815419}
   m_Layer: 0
   m_Name: grassBlob
   m_TagString: Enemy
@@ -27595,6 +27776,65 @@ MonoBehaviour:
   speed: 1
   soundPlayer: {fileID: 0}
   threatName: fire
+--- !u!82 &1817815419
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8221790, guid: aeb98e0fde2c10944981a3f121b0c7a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1421089829}
+  m_GameObject: {fileID: 1817815413}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: .5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1825852577
 GameObject:
   m_ObjectHideFlags: 0
@@ -29196,13 +29436,14 @@ GameObject:
   - 50: {fileID: 2123709898}
   - 61: {fileID: 2123709897}
   - 114: {fileID: 2123709896}
+  - 82: {fileID: 2123709901}
   m_Layer: 0
   m_Name: cloudBlob
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2123709896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29288,3 +29529,62 @@ Transform:
   - {fileID: 376455598}
   m_Father: {fileID: 2087608401}
   m_RootOrder: 2
+--- !u!82 &2123709901
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8221790, guid: a4a82f5ca7a63354a8ae3e85924bebca,
+    type: 2}
+  m_PrefabInternal: {fileID: 1270124870}
+  m_GameObject: {fileID: 2123709895}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: .5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2

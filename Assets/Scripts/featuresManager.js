@@ -52,7 +52,7 @@ function Update () {
 	sounds_checkFootstep();
 
 	if(Input.GetKeyDown(KeyCode.Tab)) {
-		music_nextTheme();
+		music_obtainedGraal();
 		StartSecondPhase();
 		
 	}
@@ -92,13 +92,13 @@ function StartSecondPhase (){
 	
     // Instantiate the wreck game object at the same position we are at
     var noArmorK = Instantiate(noArmor, currentK.transform.position, currentK.transform.rotation);
-	knightAnimator = noArmorK.GetComponentInChildren(Animator);
+    knightAnimator = noArmorK.GetComponentInChildren(Animator);
     Camera.main.GetComponent(Follow).target = noArmorK.transform;
 
     // Kill ourselves
     Destroy(currentK);
 
-	sounds_noArmor(noArmorK);
+    sounds_noArmor(noArmorK);
 
     for(var enemy : GameObject in enemies2) {
     	enemy.SetActive(true);
@@ -174,6 +174,20 @@ function music_nextTheme(){
 		mainMusicPlayer.time = tmp;
 		mainMusicPlayer.Play();
 	}
+}
+
+function music_obtainedGraal(){
+	StartCoroutine("music_obtainedGraalAndReplayTheme");
+}
+
+function music_obtainedGraalAndReplayTheme(){
+	actualTheme++;
+	mainMusicPlayer.Stop();
+	mainMusicPlayer.loop = false;
+	mainMusicPlayer.clip = Resources.Load.<AudioClip>("Music/GraalObtained");
+	mainMusicPlayer.Play();
+	yield WaitForSeconds(8);
+	music_startTheme();
 }
 
 // Sound Functions //
