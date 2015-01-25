@@ -54,7 +54,7 @@ function Update () {
 	sounds_checkFootstep();
 
 	if(Input.GetKeyDown(KeyCode.Tab)) {
-		StartCoroutine("yieldEndingDialog");
+		StartCoroutine("yieldFairyDialog");
 
 	}
 }
