@@ -188,14 +188,9 @@ function sounds_init(){
 	stepPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepArmor");
 }
 
-
-
 function sounds_noArmor(noArmorK:GameObject){
 	stepFinished = true;
-
 	stepPlayer = noArmorK.GetComponent(AudioSource);
-	Debug.Log(noArmorK);
-	Debug.Log(stepPlayer);
 	stepPlayer.volume = 0.4f;
 	stepPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepNoArmor");
 }

@@ -8,9 +8,15 @@ var detectionDistance:float;
 var lifePoints:int;	
 var initialPosition:Vector3;
 var speed = 5.0;
+var soundPlayer:AudioSource;
 
 function Start () {
 	initialPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
+	soundPlayer = GetComponent(AudioSource);
+	soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/SwordHitSlime");
+	soundPlayer.volume = 0.4f;
+	
 	currentAction = "ilde";
 }
 
@@ -70,6 +76,7 @@ function idle() {
 
 function OnTriggerEnter2D (collision : Collider2D) {
 	if(collision.gameObject.tag == "Sword") {
+		soundPlayer.Play();
 		if(lifePoints-- == 0) {
 			GetComponent(Animator).SetBool("Die", true);
 		}
