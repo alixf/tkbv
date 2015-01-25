@@ -981,6 +981,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   graal: {fileID: 101666}
+  closeElement: 
+  fill: 0
+  inside: []
+  sourceThrow: {fileID: 164576, guid: cbf02d1082ff7334cbcc95522dc06057, type: 2}
 --- !u!137 &13701668
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

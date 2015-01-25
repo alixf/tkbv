@@ -4,7 +4,7 @@ var graal:GameObject;
 var closeElement:String;
 var fill:int;
 var inside:String[];
-
+var sourceThrow:GameObject;
 
 function Start () {
 	graal.GetComponentInChildren(Light).range = 0;
@@ -20,7 +20,7 @@ function Update () {
 		if(closeElement != "none" && fill < 2) {
 			pickUp();
 		} else if (closeElement == "none") {
-		//	throwContent();
+			throwContent();
 		}
 	}
 }
@@ -29,9 +29,10 @@ function pickUp (){
 	inside[fill++] = closeElement;
 }
 
-//function throwContent(){
-//	Instantiate(animations.inside[0], transform.position, transform.rotation);
-//}
+function throwContent(){
+Debug.Log(graal.transform.rotation.y);	
+	Instantiate(sourceThrow, transform.position,transform.rotation);
+}
 
 function OnTriggerEnter2D (collision : Collider2D) {
 	if(collision.gameObject.tag == "Element") {
