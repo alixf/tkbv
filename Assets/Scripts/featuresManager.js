@@ -93,7 +93,7 @@ function StartSecondPhase (){
     // Instantiate the wreck game object at the same position we are at
     var noArmorK = Instantiate(noArmor, currentK.transform.position, currentK.transform.rotation);
 	knightAnimator = noArmorK.GetComponentInChildren(Animator);
-    Camera.mainCamera.GetComponent(Follow).target = noArmorK.transform;
+    Camera.main.GetComponent(Follow).target = noArmorK.transform;
 
     // Kill ourselves
     Destroy(currentK);
@@ -148,7 +148,7 @@ function killDialog () {
 
 function music_init(){
 	actualTheme = 1;
-	mainMusicPlayer = Camera.mainCamera.GetComponent(AudioSource);
+	mainMusicPlayer = Camera.main.GetComponent(AudioSource);
 }
 
 function music_startIntro(){
