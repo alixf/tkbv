@@ -54,7 +54,7 @@ function Update () {
 	sounds_checkFootstep();
 
 	if(Input.GetKeyDown(KeyCode.Tab)) {
-		StartCoroutine("yieldFairyDialog");
+		StartCoroutine("yieldEndingDialog");
 
 	}
 }
@@ -86,9 +86,25 @@ function yieldFairyDialog() {
 		var timer:float = dialogs[i][0];
 		yield WaitForSeconds(timer *2.2);
 	}
-	firstDoor.SetActive(false);
 
 	StartSecondPhase();
+}
+
+function yieldFirstMonsterDialog(){
+	triggerDialog(20);
+	var timer:float = dialogs[21][0];
+	yield WaitForSeconds(timer *2.2);
+}
+
+function yieldEndingDialog(){
+	var i:int;
+	music_startEnding();
+
+	for(i=21;i<24;i++){
+		triggerDialog(i);
+		var timer:float = dialogs[i][0];
+		yield WaitForSeconds(timer *2.2);
+	}
 }
 
 function StartSecondPhase (){
@@ -186,6 +202,13 @@ function music_nextTheme(){
 		mainMusicPlayer.time = tmp;
 		mainMusicPlayer.Play();
 	}
+}
+
+function music_startEnding(){
+	mainMusicPlayer.loop = false;
+	mainMusicPlayer.Stop();
+	mainMusicPlayer.clip = Resources.Load.<AudioClip>("Music/Ending");
+	mainMusicPlayer.Play();
 }
 
 function music_obtainedGraal(){
