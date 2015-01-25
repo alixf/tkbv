@@ -3,7 +3,6 @@ var hasArmor:boolean;
 var model : Transform;
 
 function Start () {
-	hasArmor = true;
 }
 
 function Update () {
