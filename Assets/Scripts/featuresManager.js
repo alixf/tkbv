@@ -1,5 +1,6 @@
 ﻿#pragma strict
 import UnityEngine.UI;
+import System.Collections;
 
 var enemies2:GameObject[];	
 var dialogUI:GameObject;	
@@ -37,14 +38,23 @@ var dialogs = [
 var mainMusicPlayer:AudioSource;
 var actualTheme:int;
 
+// Sound variables
+var stepPlayer:AudioSource;
+var stepFinished:boolean;
+var knightAnimator:Animator;
+
 function Start () {
 	music_init();
+	sounds_init();
 }
 
 function Update () {
+	sounds_checkFootstep();
+
 	if(Input.GetKeyDown(KeyCode.Tab)) {
 		music_nextTheme();
 		StartSecondPhase ();
+		sounds_noArmor();
 	}
 }
 
@@ -140,4 +150,36 @@ function music_nextTheme(){
 		mainMusicPlayer.time = tmp;
 		mainMusicPlayer.Play();
 	}
+}
+
+// Sound Functions //
+
+function sounds_init(){
+	stepFinished = true;
+
+	knightAnimator = GameObject.FindWithTag("Knight").FindWithTag("Model").GetComponent(Animator);
+
+	stepPlayer = GameObject.FindWithTag("Knight").GetComponent(AudioSource);
+	stepPlayer.volume = 0.4f;
+	stepPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepArmor");
+}
+
+function sounds_noArmor(){
+	knightAnimator = GameObject.FindWithTag("Knight").FindWithTag("Model").GetComponent(Animator);
+
+	stepPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepNoArmor");
+	stepPlayer.volume = 0.4f;
+}
+
+function sounds_playFootstep(){
+	stepFinished = false;
+	stepPlayer.Play();
+	yield WaitForSeconds(0.3);
+	stepFinished = true;
+}
+
+function sounds_checkFootstep(){
+	if (knightAnimator.GetCurrentAnimatorStateInfo(0).nameHash == 
+		Animator.StringToHash("Base Layer.Run") && stepFinished)
+		StartCoroutine("sounds_playFootstep");
 }

@@ -7041,6 +7041,8 @@ MonoBehaviour:
   noArmor: {fileID: 101664, guid: 99a7ef31ea085a14ab8e6f063090c13a, type: 2}
   mainMusicPlayer: {fileID: 0}
   actualTheme: 0
+  stepPlayer: {fileID: 0}
+  stepPlayed: 0
 --- !u!4 &152701857
 Transform:
   m_ObjectHideFlags: 0
@@ -50986,6 +50988,7 @@ GameObject:
   - 50: {fileID: 1204500837}
   - 114: {fileID: 1204500836}
   - 114: {fileID: 1204500835}
+  - 82: {fileID: 1204500841}
   m_Layer: 0
   m_Name: KnightArmor
   m_TagString: Knight
@@ -51092,6 +51095,64 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .788343251, y: 3.6100955}
   m_Center: {x: .00979995728, y: .948221445}
+--- !u!82 &1204500841
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1204500833}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: .5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &1205465108
 Prefab:
   m_ObjectHideFlags: 0
