@@ -12,7 +12,7 @@ GameObject:
   - 95: {fileID: 9519420}
   m_Layer: 0
   m_Name: food
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,7 +67,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 119420}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Radius: .466141224
   m_Center: {x: -.00447747111, y: -.0832809731}
 --- !u!95 &9519420

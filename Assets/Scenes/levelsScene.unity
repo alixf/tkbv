@@ -7110,9 +7110,10 @@ MonoBehaviour:
   graalUI: {fileID: 851062508}
   mainMusicPlayer: {fileID: 0}
   actualTheme: 0
-  stepPlayer: {fileID: 0}
+  soundPlayer: {fileID: 0}
   stepFinished: 0
   knightAnimator: {fileID: 2079105096}
+  noArmorSound: 0
 --- !u!4 &152701857
 Transform:
   m_ObjectHideFlags: 0

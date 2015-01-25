@@ -9,8 +9,10 @@ var lifePoints:int;
 var initialPosition:Vector3;
 var speed = 5.0;
 var soundPlayer:AudioSource;
+var threatName : String;
 
-function Start () {
+function Start ()
+{
 	initialPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
 	soundPlayer = GetComponent(AudioSource);
@@ -20,17 +22,21 @@ function Start () {
 	currentAction = "ilde";
 }
 
-function Update () {
+function Update ()
+{
 	clock = clock + Time.deltaTime;
 	
 	var isKnightNear = Mathf.Abs(transform.position.x - GameObject.FindWithTag("Knight").transform.position.x) < detectionDistance;
 	
-	if(!isKnightNear){
-		if(clock > delay) {
+	if(!isKnightNear)
+	{
+		if(clock > delay)
+		{
 			clock = 0;
 			currentAction = defaultActions[Mathf.Floor(Random.value * defaultActions.length)];
 		}
-		switch(currentAction) {
+		switch(currentAction)
+		{
 		    case "moveRight":
 		        moveRight(false);
 		        delay = 0.2;
@@ -43,16 +49,22 @@ function Update () {
 		        idle();
 		        delay = 0.7;
 		}
-	} else {
-		if(GameObject.FindWithTag("Knight").transform.position.x > transform.position.x){
+	}
+	else
+	{
+		if(GameObject.FindWithTag("Knight").transform.position.x > transform.position.x)
+		{
 			moveRight(true);
-		} else {
+		}
+		else
+		{
 			moveLeft(true);
 		}
 	}
 }
 
-function moveLeft(attack : boolean){	
+function moveLeft(attack : boolean)
+{
 	var accelerate = attack?2:1;
 	//transform.Translate(Vector3.left * Time.deltaTime * accelerate);
 	rigidbody2D.velocity.x = -accelerate * speed;
@@ -61,7 +73,8 @@ function moveLeft(attack : boolean){
 	GetComponent(Animator).SetBool("Attack", attack);	
 }
 
-function moveRight(attack : boolean){
+function moveRight(attack : boolean)
+{
 	var accelerate = attack?2:1;
 	//transform.Translate(Vector3.right * Time.deltaTime * accelerate);
 	rigidbody2D.velocity.x = accelerate * speed;
@@ -70,23 +83,36 @@ function moveRight(attack : boolean){
 	GetComponent(Animator).SetBool("Attack", attack);	
 }
 
-function idle() {
+function idle()
+{
 	GetComponent(Animator).SetBool("Walk", false);
 }
 
-function OnTriggerEnter2D (collision : Collider2D) {
-	if(collision.gameObject.tag == "Sword") {
+function OnTriggerEnter2D (collision : Collider2D)
+{
+	if(collision.CompareTag("Sword"))
+	{
 		soundPlayer.Play();
-		if(lifePoints-- == 0) {
+		if(lifePoints-- == 0)
+		{
+			GetComponent(Animator).SetBool("Die", true);
+		}
+	}
+	else if(collision.CompareTag("Hitbox"))
+	{
+		if(collision.gameObject.name == threatName)
+		{
 			GetComponent(Animator).SetBool("Die", true);
 		}
 	}
 }
 
-function Die() {
+function Die()
+{
 	gameObject.GetComponent(BoxCollider2D).enabled = false;
 }
 
-function Destroy() {
+function Destroy()
+{
     gameObject.SetActive(false);
 }
