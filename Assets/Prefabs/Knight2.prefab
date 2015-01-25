@@ -981,6 +981,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   graal: {fileID: 101666}
+  closeElement: 
+  closeColor: {r: 0, g: 0, b: 0, a: 0}
+  fill: 0
+  inside: []
+  throwPrefabs:
+  - {fileID: 482042, guid: 4383c4c2268998b45b35011d4264e451, type: 2}
+  - {fileID: 469214, guid: a44c8955a1f21aa4aae547827f257172, type: 2}
+  - {fileID: 412830, guid: d43df5eb7c7950a41816d701f58ebca0, type: 2}
+  - {fileID: 441718, guid: dc8d962f4b6db574da401fa04c6e953e, type: 2}
+  - {fileID: 465992, guid: 25bea403b7bf2864f83e5a4e2e4e156a, type: 2}
+  - {fileID: 464576, guid: cbf02d1082ff7334cbcc95522dc06057, type: 2}
+  - {fileID: 408014, guid: cd5fd14b8f81dba4f8db04784e3015d7, type: 2}
+  - {fileID: 405814, guid: 9f32fc98c3e6b1b48bb781ca59881de5, type: 2}
+  finalElement: 
 --- !u!137 &13701668
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

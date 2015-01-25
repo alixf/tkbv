@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &107546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 407546}
+  - 58: {fileID: 5807546}
+  - 95: {fileID: 9507546}
+  m_Layer: 0
+  m_Name: earth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &169214
 GameObject:
   m_ObjectHideFlags: 0
@@ -17,6 +34,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &407546
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107546}
+  m_LocalRotation: {x: 6.56011956e-09, y: -3.6668817e-07, z: 2.00263344e-08, w: 1}
+  m_LocalPosition: {x: -2.15499997, y: -0, z: .70699954}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 469214}
+  m_RootOrder: 0
 --- !u!4 &469214
 Transform:
   m_ObjectHideFlags: 1
@@ -26,9 +55,36 @@ Transform:
   m_LocalRotation: {x: -.671972334, y: -.220120847, z: .220120817, w: .671972334}
   m_LocalPosition: {x: .899999976, y: -.319999993, z: 1.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 407546}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!58 &5807546
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107546}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .466141224
+  m_Center: {x: -.00447747111, y: -.0832809731}
+--- !u!95 &9507546
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107546}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a362ceb6ebe06a4d8301c1ef31d121b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!198 &19869214
 ParticleSystem:
   m_ObjectHideFlags: 1
