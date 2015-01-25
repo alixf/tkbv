@@ -39,9 +39,11 @@ var mainMusicPlayer:AudioSource;
 var actualTheme:int;
 
 // Sound variables
-var stepPlayer:AudioSource;
+var soundPlayer:AudioSource;
 var stepFinished:boolean;
+var currentSoundLoaded:String;
 var knightAnimator:Animator;
+var noArmorSound:boolean;
 
 function Start () {
 	music_init();
@@ -60,6 +62,7 @@ function Update () {
 
 function StartGame():void {
 	GameObject.FindWithTag("TitleGroup").SetActive(false);
+	sounds_playMenuSelection();
 	music_startIntro();
 	
 	StartCoroutine("yieldTitle");
@@ -196,22 +199,52 @@ function sounds_init(){
 	stepFinished = true;
 
 	knightAnimator = GameObject.FindWithTag("Knight").GetComponentInChildren(Animator);
+	soundPlayer = GameObject.FindWithTag("Knight").GetComponent(AudioSource);
 
-	stepPlayer = GameObject.FindWithTag("Knight").GetComponent(AudioSource);
-	stepPlayer.volume = 0.4f;
-	stepPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepArmor");
+	noArmorSound = false;
 }
 
 function sounds_noArmor(noArmorK:GameObject){
+	soundPlayer = noArmorK.GetComponent(AudioSource);
+	noArmorSound = true;
+	sounds_loadFootstep();
+}
+
+function sounds_loadFootstep(){
 	stepFinished = true;
-	stepPlayer = noArmorK.GetComponent(AudioSource);
-	stepPlayer.volume = 0.4f;
-	stepPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepNoArmor");
+	if (noArmorSound && currentSoundLoaded != "StepNoArmor"){
+		soundPlayer.volume = 0.4f;
+		soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepNoArmor");
+		currentSoundLoaded = "StepNoArmor";
+	}
+	else if (!noArmorSound && currentSoundLoaded != "StepArmor"){
+		soundPlayer.volume = 0.4f;
+		soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/StepArmor");
+		currentSoundLoaded = "StepArmor";
+	}
+}
+
+function sounds_loadMenuSelection(){
+	soundPlayer.volume = 0.4f;
+	soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/MenuSelectionSFX");
+	currentSoundLoaded = "MenuSelectionSFX";
+}
+
+function sounds_FootstepLoaded(){
+	return ((noArmorSound && currentSoundLoaded == "StepNoArmor") || 
+		(!noArmorSound && currentSoundLoaded == "StepArmor"));
+}
+
+function sounds_MenuSelectionLoaded(){
+	return currentSoundLoaded == "MenuSelectionSFX";
 }
 
 function sounds_playFootstep(){
+	if (!sounds_FootstepLoaded())
+		sounds_loadFootstep();
+
 	stepFinished = false;
-	stepPlayer.Play();
+	soundPlayer.Play();
 	yield WaitForSeconds(0.3);
 	stepFinished = true;
 }
@@ -221,4 +254,11 @@ function sounds_checkFootstep(){
 	if (knightAnimator.GetCurrentAnimatorStateInfo(0).nameHash == 
 		Animator.StringToHash("Base Layer.Run") && stepFinished)
 		StartCoroutine("sounds_playFootstep");
+}
+
+function sounds_playMenuSelection(){
+	if (!sounds_MenuSelectionLoaded())
+		sounds_loadMenuSelection();
+
+	soundPlayer.Play();
 }
