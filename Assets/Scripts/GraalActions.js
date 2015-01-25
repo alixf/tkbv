@@ -17,6 +17,8 @@ var UIbomb:Sprite;
 var UIoil:Sprite;
 var UImud:Sprite;
 
+var soundPlayer:AudioSource;
+
 function Start ()
 {
 	graal.GetComponentInChildren(Light).range = 0;
@@ -63,7 +65,7 @@ function Update ()
 		}
 		else if(finalElement != "none")
 			throwContent(finalElement);
-			
+
 	}
 }
 
@@ -104,6 +106,7 @@ function defineGlow()
 function pickUp(element : String)
 {
 	inside[fill++] = element;
+	sounds_playGetItem();
 
 	if(fill == 1) {
 		switch(element)
@@ -144,6 +147,8 @@ function pickUp(element : String)
 
 function throwContent(element : String)
 {
+	sounds_playThrowContent(element);
+
 	var prefab : Transform = null;
 	switch(element)
 	{
@@ -190,4 +195,30 @@ function OnTriggerExit2D(other : Collider2D)
 	graal.GetComponentInChildren(Light).range = 0;
 	closeElement = "none";
 	defineGlow();
+}
+
+function sounds_playGetItem(){
+	soundPlayer = GameObject.FindWithTag("Knight").GetComponent(AudioSource);
+	soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/GetItemSFX");
+	soundPlayer.volume = 0.4f;
+	soundPlayer.Play();
+}
+
+function sounds_playThrowContent(element : String){
+	soundPlayer = GameObject.FindWithTag("Knight").GetComponent(AudioSource);
+
+	switch(element)
+	{
+		case "fire" :  soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/GraalFireSFX"); break;
+		case "earth" : soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/GraalEarthSFX"); break;
+		case "oil" :   soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/GraalMudSFX"); break;
+		case "dust" :  soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/GraalDustSFX"); break;
+		case "food" :  soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/GraalFoodSFX"); break;
+		case "water" : soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/GraalWaterSFX"); break;
+		case "bomb" :  soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/GraalBombSFX"); break;
+		case "mud" :   soundPlayer.clip = Resources.Load.<AudioClip>("Sounds/GraalMudSFX"); break;
+	}
+
+	soundPlayer.volume = 0.4f;
+	soundPlayer.Play();
 }
